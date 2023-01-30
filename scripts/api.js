@@ -2,7 +2,7 @@ import { store } from './store.js'
 
 // User actions
 export const signUp = (data) => {
-	return fetch(`http://localhost:8000/sign-up`, {
+	return fetch(`https://ancient-reef-44528.herokuapp.com/sign-up`, {
 		method: 'POST',
 		headers: {
 			'Accept': 'application/json',
@@ -13,7 +13,7 @@ export const signUp = (data) => {
 }
 
 export const signIn = (data) => {
-	return fetch(`http://localhost:8000/sign-in`, {
+	return fetch(`https://ancient-reef-44528.herokuapp.com/sign-in`, {
 		method: 'POST',
 		headers: {
 			'Accept': 'application/json',
@@ -25,7 +25,7 @@ export const signIn = (data) => {
 
 // Character Actions
 export const indexCharacters = () => {
-	return fetch(`http://localhost:8000/characters`, {
+	return fetch(`https://ancient-reef-44528.herokuapp.com/characters`, {
 		headers: {
 			'Authorization': `Bearer ${store.userToken}`,
 		},
@@ -33,15 +33,15 @@ export const indexCharacters = () => {
 }
 
 export const showCharacter = (id) => {
-	return fetch(`http://localhost:8000/characters/${id}`, {
+	return fetch(`https://ancient-reef-44528.herokuapp.com/characters/${id}`, {
 		headers: {
-			Authorization: `Bearer ${store.userToken}`,
+			'Authorization': `Bearer ${store.userToken}`,
 		},
 	})
 }
 
 export const updateCharacter = (data, id) => {
-	return fetch(`http://localhost:8000/characters/${id}`, {
+	return fetch(`https://ancient-reef-44528.herokuapp.com/characters/${id}`, {
 		method: 'PATCH',
 		headers: {
 			'Accept': 'application/json',
@@ -53,17 +53,17 @@ export const updateCharacter = (data, id) => {
 }
 
 export const deleteCharacter = (id) => {
-	return fetch(`http://localhost:8000/characters/${id}`, {
+	return fetch(`https://ancient-reef-44528.herokuapp.com/characters/${id}`, {
 		method: 'DELETE',
 		headers: {
-			Authorization: `Bearer ${store.userToken}`,
+			'Authorization': `Bearer ${store.userToken}`,
 		},
 	})
 }
 
 // Campaign Actions
 export const indexCampaign = () => {
-	return fetch('http://localhost:8000/campaigns', {
+	return fetch('https://ancient-reef-44528.herokuapp.com/campaigns', {
 		headers: {
 			'Authorization': `Bearer ${store.userToken}`
 		}
@@ -71,30 +71,30 @@ export const indexCampaign = () => {
 }
 
 export const showCampaign = (id) => {
-	return fetch(`http://localhost:8000/campaigns/${id}`, {
+	return fetch(`https://ancient-reef-44528.herokuapp.com/campaigns/${id}`, {
 		headers: {
-			Authorization: `Bearer ${store.userToken}`,
+			'Authorization': `Bearer ${store.userToken}`,
 		},
 	})
 }
 
 export const updateCampaign = (data, id) => {
-	return fetch(`http://localhost:8000/campaigns/${id}`, {
+	return fetch(`https://ancient-reef-44528.herokuapp.com/campaigns/${id}`, {
 		method: 'PATCH',
 		headers: {
-			Accept: 'application/json',
+			'Accept': 'application/json',
 			'Content-Type': 'application/json',
-			Authorization: `Bearer ${store.userToken}`,
+			'Authorization': `Bearer ${store.userToken}`,
 		},
 		body: JSON.stringify(data),
 	})
 }
 
 export const deleteCampaign = (id) => {
-	return fetch(`http://localhost:8000/campaigns/${id}`, {
+	return fetch(`https://ancient-reef-44528.herokuapp.com/campaigns/${id}`, {
 		method: 'DELETE',
 		headers: {
-			Authorization: `Bearer ${store.userToken}`,
+			'Authorization': `Bearer ${store.userToken}`,
 		},
 	})
 }
